@@ -1,1 +1,42 @@
+name: g4music
+base: core22
+adopt-info: g4music
+grade: stable
+confinement: strict
+compression: lzo
+architectures:
+  - build-on: amd64
+    build-for: amd64
+    
+slots:
+  g4music:
+    interface: dbus
+    bus: session
+    name: com.github.neithern.g4music
 
+apps:
+  g4music:
+    command: usr/bin/g4music
+    extensions: [gnome]
+    plugs:
+      - home
+      - network
+      - network-status
+      - raw-usb
+      - optical-drive
+      - removable-media
+    common-id: com.github.neithern.g4music
+    #desktop: usr/share/applications/
+    
+parts:  
+  g4music:
+    source: https://github.com/neithern/g4music.git
+    plugin: meson
+    parse-info: [usr/share/metainfo/app.appdata.xml]
+    meson-parameters:
+      - -Dprefix=/usr
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0)
+    build-packages:
+      - build-essential
