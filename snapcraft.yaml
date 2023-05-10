@@ -25,6 +25,8 @@ apps:
       - raw-usb
       - optical-drive
       - removable-media
+    slots:
+      - mpris
     common-id: com.github.neithern.g4music
     #desktop: usr/share/applications/
     
@@ -40,3 +42,4 @@ parts:
       craftctl set version=$(git describe --tags --abbrev=0)
     build-packages:
       - build-essential
+      - libgstreamer1.0-dev
