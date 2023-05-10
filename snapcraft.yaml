@@ -32,7 +32,7 @@ apps:
     
 parts:  
   g4music:
-    source: https://github.com/neithern/g4music.git
+    source: https://gitlab.gnome.org/neithern/g4music.git
     plugin: meson
     parse-info: [usr/share/metainfo/app.appdata.xml]
     meson-parameters:
