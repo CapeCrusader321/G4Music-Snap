@@ -20,6 +20,7 @@ apps:
     extensions: [gnome]
     plugs:
       - home
+      - audio-playback
       - network
       - network-status
       - raw-usb
