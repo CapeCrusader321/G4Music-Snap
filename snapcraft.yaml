@@ -28,13 +28,13 @@ apps:
     slots:
       - mpris
     common-id: com.github.neithern.g4music
-    #desktop: usr/share/applications/
+    desktop: usr/share/applications/com.github.neithern.g4music.desktop
     
 parts:  
   g4music:
     source: https://gitlab.gnome.org/neithern/g4music.git
     plugin: meson
-    parse-info: [usr/share/metainfo/app.appdata.xml]
+    parse-info: [usr/share/metainfo/com.github.neithern.g4music.appdata.xml]
     meson-parameters:
       - -Dprefix=/usr
     override-pull: |
