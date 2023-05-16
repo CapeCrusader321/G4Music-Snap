@@ -13,6 +13,8 @@ slots:
     interface: dbus
     bus: session
     name: com.github.neithern.g4music
+  mpris:
+    name: G4Music
   
 apps:
   g4music:
