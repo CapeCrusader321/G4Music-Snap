@@ -15,8 +15,7 @@ slots:
     name: com.github.neithern.g4music
   mpris:
     name: G4Music
-  
-  
+    
 apps:
   g4music:
     command: usr/bin/g4music
