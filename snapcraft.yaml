@@ -47,3 +47,7 @@ parts:
       - build-essential
       - libgstreamer1.0-dev
       - libgstreamer-plugins-base1.0-dev
+    override-build: |
+      sed -i '0,/APPLICATION_ID.to_string()/{s/APPLICATION_ID.to_string()/"G4Music".to_string()/}' ../src/src/audio/mpris_controller.rs
+      craftctl default
+  
