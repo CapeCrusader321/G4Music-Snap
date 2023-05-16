@@ -1,6 +1,7 @@
 name: g4music
 base: core22
 adopt-info: g4music
+version: '1.11'
 grade: stable
 confinement: strict
 compression: lzo
@@ -43,6 +44,3 @@ parts:
     build-packages:
       - libgstreamer1.0-dev
       - libgstreamer-plugins-base1.0-dev
-    override-pull: |
-      craftctl default
-      craftctl set version=$(git describe --tags --abbrev=0)
