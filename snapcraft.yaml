@@ -1,6 +1,5 @@
 name: g4music
 base: core22
-version: '1.11'
 adopt-info: g4music
 grade: stable
 confinement: strict
@@ -36,7 +35,7 @@ apps:
 parts:  
   g4music:
     source: https://gitlab.gnome.org/neithern/g4music.git
-    source-tag: $SNAPCRAFT_PROJECT_VERSION
+    source-tag: '1.11'
     plugin: meson
     parse-info: [usr/share/metainfo/com.github.neithern.g4music.appdata.xml]
     meson-parameters:
