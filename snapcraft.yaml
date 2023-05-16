@@ -6,7 +6,8 @@ confinement: strict
 compression: lzo
 architectures:
   - build-on: amd64
-    build-for: amd64
+  - build-on: arm64
+  - build-on: armhf
     
 slots:
   g4music:
@@ -24,8 +25,6 @@ apps:
       - home
       - audio-playback
       - network
-      - network-status
-      - raw-usb
       - optical-drive
       - removable-media
     slots:
@@ -36,15 +35,12 @@ apps:
 parts:  
   g4music:
     source: https://gitlab.gnome.org/neithern/g4music.git
+    source-tag: '1.11'
     plugin: meson
     parse-info: [usr/share/metainfo/com.github.neithern.g4music.appdata.xml]
     meson-parameters:
       - -Dprefix=/usr
-    override-pull: |
-      craftctl default
-      craftctl set version=$(git describe --tags --abbrev=0)
     build-packages:
-      - build-essential
       - libgstreamer1.0-dev
       - libgstreamer-plugins-base1.0-dev
     
