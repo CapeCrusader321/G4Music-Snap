@@ -35,7 +35,7 @@ apps:
 parts:  
   g4music:
     source: https://gitlab.gnome.org/neithern/g4music.git
-    source-tag: v1.11
+    source-tag: v1.13
     plugin: meson
     parse-info: [usr/share/metainfo/com.github.neithern.g4music.appdata.xml]
     meson-parameters:
